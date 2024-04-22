@@ -10,6 +10,7 @@ public class MovPersonaje : MonoBehaviour
     public float multiplicadorSalto=5;
     bool puedoSaltar=true;
     public bool mirandoDerecha=true;
+    bool soyAzul;
     
     
     Rigidbody2D rb;
@@ -115,6 +116,16 @@ public void Respawnear(){
     Debug.Log("vidas:"+GameManager.vidas);
     transform.position = respawn.transform.position;
 }
+public void CambiarColor (){
+        if (soyAzul){
+            this.GetComponent<SpriteRenderer>().color= Color.white;
+            soyAzul=false;
+        }else {
+            this.GetComponent<SpriteRenderer>().color= Color.blue;
+            soyAzul=true;
+        }
+
+    }
 
 }
 
