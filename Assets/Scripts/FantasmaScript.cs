@@ -6,12 +6,15 @@ public class FantasmaScript : MonoBehaviour
 {
     Vector3 posicionInicial;
     GameObject personaje;
+    AudioSource _audioSource;
     public float velocidadFantasma=2.0f;
     // Start is called before the first frame update
     void Start()
     {
        posicionInicial=transform.position; 
        personaje=GameObject.Find("Personaje");
+
+       _audioSource=this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +30,12 @@ public class FantasmaScript : MonoBehaviour
        
         
         transform.position=Vector3.MoveTowards(transform.position,personaje.transform.position,velocidadFinal);
+        
+        if(_audioSource.isPlaying==false){
+          _audioSource.Play();
+        }
+
+        
       }else{
         //VUELTA A CASA
         //Debug.DrawLine(transform.position,personaje.transform.position,Color.white,2.5f);

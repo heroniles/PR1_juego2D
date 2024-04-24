@@ -88,6 +88,7 @@ public class MovPersonaje : MonoBehaviour
      }
 
      if(transform.position.y <= -7){
+        audioManager.Instance.SonarClipUnaVez( audioManager.Instance.fxDead);
         Respawnear();
 
     }

@@ -28,11 +28,16 @@ public class InicioScript : MonoBehaviour
         SceneManager.LoadScene("1Escena1");
     }
     public void MostrarSettings(){
+        audioManager.Instance.SonarClipUnaVez( audioManager.Instance.fxButton);
         panelSettings.SetActive(true);
 
     }
     public void OcultarSettings(){
         panelSettings.SetActive(false);
+    }
+     public void SuenaBoton(){
+        audioManager.Instance.SonarClipUnaVez( audioManager.Instance.fxButton);
+       
     }
 
 }
